@@ -9,7 +9,7 @@ pipeline {
 	stages {
 		stage ('Submit Stack') {
 			steps {
-				sh "aws cloudformation create-stack --stack-name apache-server --template-body file://apache.yaml --region 'us-west-2' --parameters KeyName=${params.KeyName},PROJECT=${params.PROJECT},ENV=${params.ENV}"
+				sh "aws cloudformation create-stack --stack-name apache-server --template-body file://apache.yaml --region 'us-west-2' --parameters ParameterKey=KeyName,ParameterValue=${params.KeyName} ParameterKey=PROJECT,ParameterValue=${params.PROJECT} ParameterKey=ENV,ParameterValue=${params.ENV}"
 			}
 		}
 	}
