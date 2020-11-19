@@ -3,7 +3,7 @@ pipeline {
 	parameters {
     string(name: 'project_name', description: 'Informe el nombre del proyecto')
 	string(name: 'PROJECT', description: 'Informe el nombre del proyecto')
-   
+   }
 	stages {
 		stage ('Submit Stack') {
 			steps {
